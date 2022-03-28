@@ -6,9 +6,9 @@ const Footer = () => {
       <p className="footer-description">
         Ecommerce created during Wizeline’s Academy React Bootcamp
       </p>
-      <div class="footer-left">
-        <p class="footer-links">
-          <a class="link-1" href="#home">
+      <div className="footer-left">
+        <p className="footer-links">
+          <a className="link-1" href="#home">
             Home
           </a>
           <a href="#contact">Contact</a>
