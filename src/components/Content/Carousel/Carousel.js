@@ -4,13 +4,14 @@ import "./Carousel.css";
 export const CarouselItem = ({ children, width }) => {
   return (
     <div className="carousel-item" style={{ width: width }}>
-      {children}
+      <img src={children} alt="carouselImage"></img>
     </div>
   );
 };
 
 const Carousel = ({ children }) => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
 
   const updateIndex = (newIndex) => {
     if(newIndex < 0) {
@@ -23,8 +24,10 @@ const Carousel = ({ children }) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      updateIndex(activeIndex + 1);
-    }, 1000);
+      if(!paused) {
+        updateIndex(activeIndex + 1);
+      }
+    }, 4000);
 
     return () => {
       if(interval) {
@@ -34,7 +37,7 @@ const Carousel = ({ children }) => {
   });
 
   return (
-    <div className="carousel">
+    <div className="carousel" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
       <div className="inner" style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
         {React.Children.map(children, (child, index) => {
           return React.cloneElement(child, { width: "100%" });
