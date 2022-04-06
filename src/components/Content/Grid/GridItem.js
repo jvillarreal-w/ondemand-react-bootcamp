@@ -11,14 +11,6 @@ const GridItem = (children) => {
             <button>Añadir al carrito</button>
         </div>
     </div>
-    // <div className="card">
-    //   <div className="card-header">{item.name}</div>
-    //   <div className="card-body">
-    //     <img src={item.image} alt={item.name}></img>
-    //     <p>{item.description}</p>
-    //     <p>{item.price}</p>
-    //   </div>
-    // </div>
   );
 };
 

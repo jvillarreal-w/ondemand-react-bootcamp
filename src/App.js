@@ -11,12 +11,6 @@ import Categories from "./utils/Categories";
 function App() {
   //const { data, isLoading } = useFeaturedBanners();
   //console.log(data, isLoading);
-
-  // const listResults = data.results.map((result) =>
-  //   <CarouselItem>{result}</CarouselItem>
-  // );
-
-  // return [<Header />, <Slider />, <Carousel results={data.results} />, <Grid />, <Footer />];
   return (
     <div className="App">
       <Header/>
@@ -25,9 +19,6 @@ function App() {
         return (<CarouselItem key={category.id}>{category.data.main_image.url}</CarouselItem>);
       })}
       </Carousel>
-      {/* {Products.results.map((product, index) => {
-        return (<Grid key={product.id} name={product.data.name} description={product.data.short_description} image={product.data.mainimage.url} price={product.data.price}></Grid>);
-      })} */}
       <Grid />
       <Footer/>
     </div>
