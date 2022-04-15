@@ -1,9 +1,11 @@
 import "./Header.css";
 
-const Header = () => {
+const Header = (props) => {
+  const { showHomePage } = props;
+
   return (
     <div className="header">
-      <a href="#default" className="logo">
+      <a href="#default" onClick={() => showHomePage()} className="logo">
         Zap Store
       </a>
       <div className="header-right">

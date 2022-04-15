@@ -13,9 +13,13 @@ function App() {
     return setProductListToggle(!productListToggle);
   }
 
+  const handleShowHomePage = () => {
+    return setProductListToggle(true);
+  }
+
   return (
     <div className="App">
-      <Header/>
+      <Header showHomePage={handleShowHomePage}/>
       {productListToggle ? <HomePage/> : <ProductList/>}
       <div>
         <button onClick={() => handleToggle()}>View all products</button>
