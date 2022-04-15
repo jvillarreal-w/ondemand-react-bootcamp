@@ -1,15 +1,15 @@
 import GridItem from "./GridItem";
-import fProducts from "../../../utils/featuredProducts.js";
+import Products from "../../../utils/Products";
 import { v4 as uuidv4 } from "uuid";
 
-const Grid = (children) => {
+const FilteredGrid = (children) => {
   return (
     <table className="tabs">
       <tbody>
         <tr>
           <td className="contentCell">
             <div className="contentWrapper">
-              {fProducts.results.map((product, index) => {
+              {Products.results.map((product, index) => {
                 return (
                   <div className="row" key={uuidv4()}>
                     <GridItem
@@ -30,4 +30,4 @@ const Grid = (children) => {
   );
 };
 
-export default Grid;
+export default FilteredGrid;

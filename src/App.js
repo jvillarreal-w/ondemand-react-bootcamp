@@ -20,6 +20,7 @@ function App() {
   return (
     <div className="App">
       <Header showHomePage={handleShowHomePage}/>
+      
       {productListToggle ? <HomePage/> : <ProductList/>}
       <div>
         <button onClick={() => handleToggle()}>View all products</button>
