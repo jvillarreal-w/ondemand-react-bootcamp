@@ -2,7 +2,11 @@ import GridItem from "./GridItem";
 import Products from "../../../utils/Products";
 import { v4 as uuidv4 } from "uuid";
 
-const FilteredGrid = (children) => {
+const FilteredGrid = (props) => {
+  const { filteredItems } = props;
+
+  console.log(filteredItems);
+
   return (
     <table className="tabs">
       <tbody>
