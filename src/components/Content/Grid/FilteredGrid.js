@@ -5,8 +5,6 @@ import { v4 as uuidv4 } from "uuid";
 const FilteredGrid = (props) => {
   const { filteredItems } = props;
 
-  console.log(filteredItems);
-
   return (
     <table className="tabs">
       <tbody>

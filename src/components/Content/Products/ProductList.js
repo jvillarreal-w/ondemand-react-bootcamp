@@ -2,6 +2,7 @@ import "./ProductList.css";
 import Categories from "../../../utils/Categories";
 import FilteredGrid from "../Grid/FilteredGrid";
 import { useState } from "react";
+import Pagination from "../../Pagination/Pagination";
 
 const ProductList = () => {
   let [filteredProducts, setFilteredProducts] = useState([]);
@@ -34,6 +35,7 @@ const ProductList = () => {
       </div>
       <div className="productGrid">
         <FilteredGrid filteredItems={filteredProducts} />
+        <Pagination/>
       </div>
     </div>
   );
