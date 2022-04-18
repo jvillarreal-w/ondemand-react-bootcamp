@@ -14,17 +14,21 @@ const FilteredGrid = (props) => {
           <td className="contentCell">
             <div className="contentWrapper">
               {Products.results.map((product, index) => {
-                return (
-                  <div className="row" key={uuidv4()}>
-                    <GridItem
-                      key={product.id}
-                      name={product.data.name}
-                      description={product.data.short_description}
-                      image={product.data.mainimage.url}
-                      price={product.data.price}
-                    ></GridItem>
-                  </div>
-                );
+                if (filteredItems.includes(product.data.category.slug)) {
+                  return (
+                    <div className="row" key={uuidv4()}>
+                      <GridItem
+                        key={product.id}
+                        name={product.data.name}
+                        description={product.data.short_description}
+                        image={product.data.mainimage.url}
+                        price={product.data.price}
+                      ></GridItem>
+                    </div>
+                  );
+                } else {
+                  return null;
+                }
               })}
             </div>
           </td>
