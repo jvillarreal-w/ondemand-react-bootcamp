@@ -10,9 +10,11 @@ const ProductList = () => {
   const handleFilteredProducts = (event, newProduct) => {
     if (event.target.checked) {
       event.target.parentElement.style.backgroundColor = "green";
+      event.target.parentElement.style.color = "white";
       return setFilteredProducts([...filteredProducts, newProduct]);
     } else {
       event.target.parentElement.style.backgroundColor = "#f1f1f1";
+      event.target.parentElement.style.color = "black";
       return setFilteredProducts(
         filteredProducts.filter((product) => product !== newProduct)
       );
