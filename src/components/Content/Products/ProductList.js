@@ -8,11 +8,14 @@ const ProductList = () => {
   let [filteredProducts, setFilteredProducts] = useState([]);
 
   const handleFilteredProducts = (event, newProduct) => {
-    if(event.target.checked) {
+    if (event.target.checked) {
+      event.target.parentElement.style.backgroundColor = "green";
       return setFilteredProducts([...filteredProducts, newProduct]);
-    }
-    else {
-      return setFilteredProducts(filteredProducts.filter(product => product !== newProduct))
+    } else {
+      event.target.parentElement.style.backgroundColor = "#f1f1f1";
+      return setFilteredProducts(
+        filteredProducts.filter((product) => product !== newProduct)
+      );
     }
   };
 
@@ -25,7 +28,12 @@ const ProductList = () => {
               <label>
                 <input
                   type="checkbox"
-                  onClick={(event) => handleFilteredProducts(event, category.data.name.toLowerCase())}
+                  onClick={(event) =>
+                    handleFilteredProducts(
+                      event,
+                      category.data.name.toLowerCase()
+                    )
+                  }
                 ></input>
                 {category.data.name}
               </label>
@@ -35,7 +43,7 @@ const ProductList = () => {
       </div>
       <div className="productGrid">
         <FilteredGrid filteredItems={filteredProducts} />
-        <Pagination/>
+        <Pagination />
       </div>
     </div>
   );
