@@ -14,7 +14,9 @@ const Header = (props) => {
         </a>
         <a href="#contact">Contact</a>
         <a href="#about">About</a>
+        <input type="text" placeholder="Search..."></input>
       </div>
+      <a href="#cart" style={{fontWeight: "bold"}}>🛒</a>
     </div>
   );
 };
