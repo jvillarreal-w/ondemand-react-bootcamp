@@ -1,5 +1,5 @@
 import GridItem from "./GridItem";
-import Products from "../../../utils/featuredProducts.js";
+import fProducts from "../../../utils/featuredProducts.js";
 import { v4 as uuidv4 } from "uuid";
 
 const Grid = (children) => {
@@ -9,7 +9,7 @@ const Grid = (children) => {
         <tr>
           <td className="contentCell">
             <div className="contentWrapper">
-              {Products.results.map((product, index) => {
+              {fProducts.results.map((product, index) => {
                 return (
                   <div className="row" key={uuidv4()}>
                     <GridItem
